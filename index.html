@@ -6,10 +6,196 @@
     <title>OA-imgLiquid</title>
 
     <link href="./css/frame.css" rel="stylesheet" type="text/css">
+    <link href="./res/prettify/prettify.css" rel="stylesheet" type="text/css">
+
     <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" /></script>
+    <script src="./res/prettify/prettify.js" language="javascript" type="text/javascript" /></script>
     
+    <script src="./res/oa-imgLiquid.js" language="javascript" type="text/javascript" /></script>
+
+    <style>
+      .horizontal, .vertical {
+          position: relative;
+          display: inline-block;
+          border: 1px solid red;
+      }
+      .horizontal {
+        width: 320px;
+        height: 120px;
+      }
+      .vertical {
+        height: 320px;
+        width: 180px;
+      }
+    </style>
   </head>
   <body lang="zh-tw">
+    <div id='container'>
+      <div class='block d'>
+        原圖：
+        <div class='demo'><img src='img/demo.jpg' /></div>
+      </div>
+      <div class='block v'>
+<pre class='js prettyprint'>
+  $('.img').OAimgLiquid ();
+  
+  // or
+  
+  $('.img').OAimgLiquid ({
+    position: '='
+  });
+  
+  // or
 
+  $('.img').OAimgLiquid ({
+    position: '50%'
+  });
+</pre>
+        <div class='demo'><div class='vertical v1'><img src='img/demo.jpg' /></div></div>
+      </div>
+
+      <div class='block v'>
+<pre class='js prettyprint'>
+  $('.img').OAimgLiquid ({
+    position: '-'
+  });
+
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '0'
+  });
+
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '0px'
+  });
+
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '0%'
+  });
+</pre>
+        <div class='demo'><div class='vertical v2'><img src='img/demo.jpg' /></div></div>
+      </div>
+
+      <div class='block v'>
+<pre class='js prettyprint'>
+  $('.img').OAimgLiquid ({
+    position: '+'
+  });
+
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '100%'
+  });
+</pre>
+        <div class='demo'><div class='vertical v3'><img src='img/demo.jpg' /></div></div>
+      </div>
+
+
+
+
+
+
+      <div class='block h'>
+<pre class='js prettyprint'>
+  $('.img').OAimgLiquid ();
+  
+  // or
+  
+  $('.img').OAimgLiquid ({
+    position: '='
+  });
+  
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '50%'
+  });
+</pre>
+        <div class='demo'><div class='horizontal h1'><img src='img/demo.jpg' /></div></div>
+      </div>
+
+      <div class='block h'>
+<pre class='js prettyprint'>
+  $('.img').OAimgLiquid ({
+    position: '-'
+  });
+
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '0'
+  });
+
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '0px'
+  });
+
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '0%'
+  });
+</pre>
+        <div class='demo'><div class='horizontal h2'><img src='img/demo.jpg' /></div></div>
+      </div>
+      <div class='block h'>
+<pre class='js prettyprint'>
+  $('.img').OAimgLiquid ({
+    position: '+'
+  });
+
+  // or
+
+  $('.img').OAimgLiquid ({
+    position: '100%'
+  });
+</pre>
+        <div class='demo'><div class='horizontal h3'><img src='img/demo.jpg' /></div></div>
+      </div>
+      <!-- 
+      <div class='vertical v1'>
+        <img src='img/demo.jpg' />
+      </div>
+      <hr/>
+      <div class='vertical v2'>
+        <img src='img/demo.jpg' />
+      </div> -->
+    </div>
+
+    
+
+    <script type="text/javascript">
+      $(function () {
+        $('.prettyprint').addClass ('linenums');
+        prettyPrint ();
+
+        $('.v1').OAimgLiquid ();
+
+        $('.v2').OAimgLiquid ({
+          position: '-'
+        });
+        $('.v3').OAimgLiquid ({
+          position: '+'
+        });
+        
+        $('.h1').OAimgLiquid ();
+
+        $('.h2').OAimgLiquid ({
+          position: '-'
+        });
+        $('.h3').OAimgLiquid ({
+          position: '+'
+        });
+
+      });
+    </script>
   </body>
 </html>
