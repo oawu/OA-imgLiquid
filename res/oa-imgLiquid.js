@@ -17,7 +17,7 @@
       },
       ImgLoad = function ($obj, callback, count, maxCount) {
 
-        $img.load (function () {
+        $obj.load (function () {
           callback ();
         }).error (function () {
           if ((count++ < maxCount) && $obj.data (opt.defaultSrcDatakey)) {
@@ -52,13 +52,10 @@
           }
         }
         return n;
-      },
-      getValue = function (n) {
-         return ;
-      }
-      p = {w: parseFloat ($(this).css ('width')), h: parseFloat ($(this).css ('height'))},
-      $img = $(this).children ('img');
+      };
 
+      p = {w: parseFloat ($(this).css ('width')), h: parseFloat ($(this).css ('height'))}
+      $img = $(this).children ('img');
       opt = $.extend({}, d4Opt, opt);
 
       if (!($.isNumeric(p.h) && $.isNumeric(p.w) && (p.w > 0) && (p.h > 0) && $img.length && (($(this).css ('position') == 'absolute') || ($(this).css ('position') == 'relative'))))
@@ -66,26 +63,26 @@
 
       $(this).css ({'overflow': 'hidden'});
 
-      ImgLoad ($img, function () {
-        var i = {w: parseFloat ($img.css ('width')), h: parseFloat ($img.css ('height'))};
+      ImgLoad ($img, function (opt, $obj) {
+        var i = {w: parseFloat ($obj.css ('width')), h: parseFloat ($obj.css ('height'))};
 
         if (!($.isNumeric(i.h) && $.isNumeric(i.w) && (i.w > 0) && (i.h > 0)))
           return ;
 
+        var p = {w: parseFloat ($(this).css ('width')), h: parseFloat ($(this).css ('height'))}
         var n = calcImageSizeStrict (i, p);
 
-        $img.css ({'position': 'absolute', 'width': n.w, 'height': n.h});
-        
+        $obj.css ({'position': 'absolute', 'width': n.w, 'height': n.h});
         var ms = (opt.position + '').match (/(^\s*\d+\.?\d*)(%)\s*$/);
         if (ms) opt.position = (n.h > p.h ? (n.h - p.h) : (n.w - p.w)) * (ms[1] / 100);
 
         ms = (opt.position + '').match (/(^\s*\d+\.?\d*)(px)\s*$/);
         if (ms) opt.position = ms[1];
 
-        if (n.h > p.h) $img.css ({'left': '0', 'top': $.isNumeric (opt.position) ? (!opt.agreeOverflow && opt.position > Math.abs (n.h - p.h) ? ((0 - Math.abs (n.h - p.h)) + 'px') : (!opt.agreeOverflow && opt.position < 0 ? 0 : ((0 - opt.position) + 'px'))) : (opt.position == '-' ? 0 : (opt.position == '+' ? ((0 - Math.abs (n.h - p.h)) + 'px') : ((0 - (Math.abs (n.h - p.h) / 2)) + 'px')))});
-        else $img.css ({'top': '0', 'left': $.isNumeric (opt.position) ? (!opt.agreeOverflow && opt.position > Math.abs (n.w - p.w) ? ((0 - Math.abs (n.w - p.w)) + 'px') : (!opt.agreeOverflow && opt.position < 0 ? 0 : ((0 - opt.position) + 'px'))) : (opt.position == '-' ? 0 : (opt.position == '+' ? ((0 - Math.abs (n.w - p.w)) + 'px') : ((0 - (Math.abs (n.w - p.w) / 2)) + 'px')))});
+        if (n.h > p.h) $obj.css ({'left': '0', 'top': $.isNumeric (opt.position) ? (!opt.agreeOverflow && opt.position > Math.abs (n.h - p.h) ? ((0 - Math.abs (n.h - p.h)) + 'px') : (!opt.agreeOverflow && opt.position < 0 ? 0 : ((0 - opt.position) + 'px'))) : (opt.position == '-' ? 0 : (opt.position == '+' ? ((0 - Math.abs (n.h - p.h)) + 'px') : ((0 - (Math.abs (n.h - p.h) / 2)) + 'px')))});
+        else $obj.css ({'top': '0', 'left': $.isNumeric (opt.position) ? (!opt.agreeOverflow && opt.position > Math.abs (n.w - p.w) ? ((0 - Math.abs (n.w - p.w)) + 'px') : (!opt.agreeOverflow && opt.position < 0 ? 0 : ((0 - opt.position) + 'px'))) : (opt.position == '-' ? 0 : (opt.position == '+' ? ((0 - Math.abs (n.w - p.w)) + 'px') : ((0 - (Math.abs (n.w - p.w) / 2)) + 'px')))});
 
-      }.bind ($(this)), 0, 3);
+      }.bind ($(this), opt, $img), 0, 3);
 
       $(this).css ('color', '#ff0000');
       
