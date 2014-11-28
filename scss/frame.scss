@@ -1,0 +1,102 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+
+@import "_oa";
+
+@include font-face(Monaco, font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+
+* {
+  vertical-align: top;
+  @include selection(rgba(150, 180, 230, 1.0000), rgba(237, 239, 244, 1.0000));
+  @include font-smoothing(antialiased);
+
+  &, &:after, &:before {
+    @include box-sizing(border-box);
+  }
+}
+
+a {
+  color: rgba(32, 80, 129, 0.8);
+
+  &:hover {
+    color: rgba(32, 80, 129, 1);
+  }
+}
+
+html {
+  height: 100%;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+    font-family: Monaco;
+    color: #000;
+    background-color: $mainBackground;
+
+    @include font-smoothing(antialiased);
+    @include box-shadow(none);
+
+    &:before {
+      content: "";
+      position: fixed;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      z-index: 100;
+    }
+
+    #container {
+      position: relative;
+      display: inline-block;
+      width: $mainWidth;
+      margin: $mainTop auto $mainBottom auto;
+      min-height: 100px;
+    }
+  }
+}
+
+*.oa-btn {
+  border: 1px solid #5a5a5a;
+  color: white;
+  padding: 2px 10px;
+  margin-left: 2px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #6e6e6e;
+  border-bottom: 1px solid #464646;
+
+  @include border-radius(3px);
+  @include box-shadow(inset 0 -1px 2px rgba(60, 60, 60, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.3));
+
+  &:hover {
+    text-decoration: none;
+    background-color: #787878;
+
+    @include box-shadow(inset 0 -1px 2px rgba(60, 60, 60, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.4));
+  }
+  &:active {
+    @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125));
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+*.clearfix {
+  *zoom: 1;
+
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+    clear: both;
+  }
+}
