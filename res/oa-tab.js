@@ -4,8 +4,8 @@
  */
 
 (function( factory ) {
-    if ((typeof define === 'function') && define.amd) define (['jquery'], factory);
-    else factory (jQuery);
+  if ((typeof define === 'function') && define.amd) define (['jquery'], factory);
+  else factory (jQuery);
 }(function ($) {
 
   $.fn.extend ({
@@ -13,22 +13,18 @@
       var d4Opt = {
         titleSelector: '.title',
         panelSelector: '.panel',
-      }
+      },
+      init = function (opt) {
+        var $title = $(this).find (opt.titleSelector).addClass ('oa-tab-title').clone (true, true),
+            $panel = $(this).find (opt.panelSelector).addClass ('oa-tab-panel').clone (true, true);
 
-      var init = function (opt) {
-        var $title = $(this).find (opt.titleSelector).addClass ('oa-tab-title').clone (true, true);
-        var $panel = $(this).find (opt.panelSelector).addClass ('oa-tab-panel').clone (true, true);
         $(this).addClass ('oa-tab').empty ();
 
-        $('<div />').addClass ('oa-tab-titles').append (
-            $('<div />').addClass ('oa-tab-titles-container').addClass ('clearfix').append ($title)
-          ).appendTo ($(this));
+        $('<div />').addClass ('oa-tab-titles').append ($('<div />').addClass ('oa-tab-titles-container').addClass ('clearfix').append ($title)).appendTo ($(this));
 
         $('<div />').addClass ('oa-tab-shadow-line').appendTo ($(this));
 
-        $('<div />').addClass ('oa-tab-panels').append (
-            $('<div />').addClass ('oa-tab-panels-container').addClass ('clearfix').append ($panel)
-          ).appendTo ($(this));
+        $('<div />').addClass ('oa-tab-panels').append ($('<div />').addClass ('oa-tab-panels-container').addClass ('clearfix').append ($panel)).appendTo ($(this));
 
         $title.on ('mouseenter click', function () {
             var n = $(this).parent ().children ().removeClass ('active').index ($(this).addClass ('active')),
@@ -43,9 +39,7 @@
 
       opt = $.extend({}, d4Opt, opt);
 
-      return $(this).each (function () {
-        init.bind ($(this), opt).apply ();
-      });
+      return $(this).each (function () { init.bind ($(this), opt).apply (); });
     }
   });
 }));

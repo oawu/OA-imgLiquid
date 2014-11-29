@@ -4,8 +4,8 @@
  */
 
 (function( factory ) {
-    if ((typeof define === 'function') && define.amd) define (['jquery'], factory);
-    else factory (jQuery);
+  if ((typeof define === 'function') && define.amd) define (['jquery'], factory);
+  else factory (jQuery);
 }(function ($) {
 
   $.fn.extend ({
