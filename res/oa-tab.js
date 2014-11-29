@@ -43,12 +43,9 @@
 
       opt = $.extend({}, d4Opt, opt);
 
-      init.bind ($(this), opt).apply ();
+      return $(this).each (function () {
+        init.bind ($(this), opt).apply ();
+      });
     }
   });
 }));
-$(function () {
-
-  $('.tab').OAtab ();
-
-});
