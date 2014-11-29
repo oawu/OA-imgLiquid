@@ -22,6 +22,32 @@
   font-family: "Monaco";
   src: url('/font/monaco/monaco.ttf?1417093342') format('truetype'), url('/font/monaco/monaco.otf?1417093342') format('opentype');
 }
+/* line 10, ../scss/frame.scss */
+* {
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+}
+/* line 53, ../../../.rvm/gems/ruby-2.1.3/gems/compass-core-1.0.1/stylesheets/compass/css3/_selection.scss */
+*::-moz-selection {
+  color: #edeff4;
+  background-color: #96b4e6;
+}
+/* line 53, ../../../.rvm/gems/ruby-2.1.3/gems/compass-core-1.0.1/stylesheets/compass/css3/_selection.scss */
+*::selection {
+  color: #edeff4;
+  background-color: #96b4e6;
+}
+/* line 15, ../scss/frame.scss */
+*, *:after, *:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* line 20, ../scss/frame.scss */
 a {
   color: rgba(32, 80, 129, 0.8);

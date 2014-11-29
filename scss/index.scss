@@ -8,7 +8,19 @@
 html {
   body {
     #container {
-
+      .img {
+        display: inline-block;
+        // border: 1px solid red;
+        width: 320px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        
+        &.a {
+          height: 320px;
+          width: 200px;
+        }
+      }
     }
   }
 }

@@ -18,3 +18,16 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
+/* line 11, ../scss/index.scss */
+html body #container .img {
+  display: inline-block;
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 19, ../scss/index.scss */
+html body #container .img.a {
+  height: 320px;
+  width: 200px;
+}
