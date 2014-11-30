@@ -6,7 +6,6 @@ $(function () {
   $('.prettyprint').addClass ('linenums');
   prettyPrint ();
 
-  $('.tab').OAtab ({defaultActive: 4});
-  // $('.img').OAimgLiquid ();
+  $('.tab').OAtab ();
   $('.demo').OAimgLiquid ();
 });
