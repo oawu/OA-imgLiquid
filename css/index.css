@@ -19,15 +19,46 @@
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
 /* line 11, ../scss/index.scss */
-html body #container .img {
-  display: inline-block;
-  width: 320px;
-  height: 200px;
-  overflow: hidden;
+html body #container .ori {
   position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px;
 }
-/* line 19, ../scss/index.scss */
-html body #container .img.a {
-  height: 320px;
-  width: 200px;
+/* line 17, ../scss/index.scss */
+html body #container .ori .title {
+  position: relative;
+  float: left;
+  display: inline;
+  font-size: 10px;
+  width: 400px;
+  text-align: right;
+  padding-right: 20px;
+}
+/* line 26, ../scss/index.scss */
+html body #container .ori .title .main {
+  margin-top: 50px;
+  font-size: 50px;
+}
+/* line 30, ../scss/index.scss */
+html body #container .ori .title .sub {
+  padding-right: 20px;
+  color: rgba(39, 40, 34, 0.7);
+}
+/* line 35, ../scss/index.scss */
+html body #container .ori img {
+  float: left;
+  height: 360px;
+  height: 240px;
+}
+/* line 41, ../scss/index.scss */
+html body #container .block {
+  border: 1px solid red;
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px;
+}
+/* line 50, ../scss/index.scss */
+html body #container .tab .panel {
+  padding: 10px;
 }

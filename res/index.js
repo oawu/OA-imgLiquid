@@ -3,7 +3,6 @@
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
 $(function () {
-  // $('.tab').OAtab ({titleSelector: '.title'});
-    $('.img').OAimgLiquid ();
-
+  $('.tab').OAtab ();
+  // $('.img').OAimgLiquid ();
 });
