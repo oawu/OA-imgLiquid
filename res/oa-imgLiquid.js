@@ -12,8 +12,10 @@
     OAimgLiquid: function (opt) {
       var d4Opt = {
         defaultSrcDatakey: 'src',
+        dataPositionName: 'position',
+        dataOverflowName: 'overflow',
         position: '=', // -, =, +, number, percent
-        agreeOverflow: true
+        agreeOverflow: false
       },
       ImgLoad = function ($obj, callback, count, maxCount) {
         if (!$obj.get (0).complete)
@@ -59,6 +61,12 @@
       opt = $.extend({}, d4Opt, opt);
 
       return $(this).each (function () {
+        if ($(this).data (opt.dataPositionName))
+          opt = $.extend({}, opt, {position: $(this).data (opt.dataPositionName)});
+        
+        if ($(this).data (opt.dataOverflowName))
+          opt = $.extend({}, opt, {agreeOverflow: $(this).data (opt.dataOverflowName)});
+
         p = {w: parseFloat ($(this).css ('width')), h: parseFloat ($(this).css ('height'))}
         $img = $(this).children ('img');
 
@@ -80,7 +88,7 @@
           var ms = (opt.position + '').match (/(^\s*\d+\.?\d*)(%)\s*$/);
           if (ms) opt.position = (n.h > p.h ? (n.h - p.h) : (n.w - p.w)) * (ms[1] / 100);
 
-          ms = (opt.position + '').match (/(^\s*\d+\.?\d*)(px)\s*$/);
+          ms = (opt.position + '').match (/(^\s*?\-?\d+\.?\d*)(px)\s*$/);
           if (ms) opt.position = ms[1];
 
           if (n.h > p.h) $obj.css ({'left': '0', 'top': $.isNumeric (opt.position) ? (!opt.agreeOverflow && opt.position > Math.abs (n.h - p.h) ? ((0 - Math.abs (n.h - p.h)) + 'px') : (!opt.agreeOverflow && opt.position < 0 ? 0 : ((0 - opt.position) + 'px'))) : (opt.position == '-' ? 0 : (opt.position == '+' ? ((0 - Math.abs (n.h - p.h)) + 'px') : ((0 - (Math.abs (n.h - p.h) / 2)) + 'px')))});

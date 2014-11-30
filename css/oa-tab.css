@@ -116,48 +116,49 @@
   float: left;
   width: 910px;
   margin: 0 0 0 0;
+  overflow: hidden;
   -moz-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(1) {
   left: 0px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(2) {
   left: 910px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(3) {
   left: 1820px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(4) {
   left: 2730px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(5) {
   left: 3640px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(6) {
   left: 4550px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(7) {
   left: 5460px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(8) {
   left: 6370px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(9) {
   left: 7280px;
 }
-/* line 110, ../scss/oa-tab.scss */
+/* line 111, ../scss/oa-tab.scss */
 .oa-tab .oa-tab-panels .oa-tab-panels-container .oa-tab-panel:nth-child(10) {
   left: 8190px;
 }

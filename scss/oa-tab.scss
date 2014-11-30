@@ -103,6 +103,7 @@ $arrowSize: 10px;
         float: left;
         width: $rankWidth;
         margin: $rankMarginTop $rankMarginRight $rankMarginBottom $rankMarginLeft;
+        overflow: hidden;
 
         @include transition(all .5s ease-in-out);
 

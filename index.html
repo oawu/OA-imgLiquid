@@ -33,26 +33,451 @@
       </div>
 
       <div class='tab'>
-        <div class='title'>引用規則</div>
-        <div class='title'>原理解說</div>
-        <div class='title'>水平</div>
+        <div class='title'>說明</div>
         <div class='title'>垂直</div>
+        <div class='title'>水平</div>
         <div class='title'>其他</div>
+        <div class='title'>關於</div>
 
-        <div class='panel'>This is panel 1</div>
-        <div class='panel'>This is panel 2</div>
-        <div class='panel'>This is panel 3</div>
-        <div class='panel'>This is panel 3</div>
-        <div class='panel'>This is panel 3</div>
+        <div class='panel'>
+          0. 圖解
+          <div class='pic_3d clearfix'>
+            <img class='d1' src='img/3d1.png'>
+            <img class='d2' src='img/3d2.png'>
+          </div>
+          <br />
+          <br />
+
+          1. 加入 jquery.js
+<pre class='js prettyprint'>
+  &lt;script src=&quot;jquery-1.10.2.min.js&quot; language=&quot;javascript&quot; type=&quot;text/javascript&quot; /&gt;&lt;/script&gt;
+</pre>
+          <br />
+          <br />
+          2. 加入 oa-imgLiquid.js
+<pre class='js prettyprint'>
+  &lt;script src=&quot;oa-imgLiquid.js&quot; language=&quot;javascript&quot; type=&quot;text/javascript&quot; /&gt;&lt;/script&gt;
+</pre>
+          <br />
+          <br />
+          3. 元素結構
+<pre class='html prettyprint'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+          <br />
+          <br />
+          4. 元素 css 樣式
+          <div class='desc'>- 父層 <span class='red'>position</span> 一定要是 <span class='red'>position</span> 或 <span class='red'>absolute</span>。</div>
+          <div class='desc'>- 父層一定要有設定 <span class='red'>width</span> 或 <span class='red'>height</span>。</div>
+<pre class='css prettyprint'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      // or
+      position: absolute;
+      
+      width: 360px;
+      height: 180px;
+    }
+  &lt;/style&gt;
+</pre>
+          <br />
+          <br />
+          5. Javascript
+<pre class='js prettyprint'>
+  $('.oa-imgLiquid').OAimgLiquid ();
+</pre>
+        </div>
+
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+        <div class='panel'>
+          <div class='block clearfix v'>
+            <div class='title'>垂直置<span class='red'>中</span></div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 360px;
+      height: 100px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ();
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '='
+  });
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '50%'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='='>
+              <img src='img/demo.jpg'>
+            </div>
+
+          </div>
+          <div class='block clearfix v'>
+
+            <div class='title'>垂直置<span class='red'>頂</span></div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 360px;
+      height: 100px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ({
+    position: '-'
+  });
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '0%'
+  });
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '0' // or '0px'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='-'>
+              <img src='img/demo.jpg'>
+            </div>
+          </div>
+          <div class='block clearfix v'>
+
+            <div class='title'>垂直置<span class='red'>底</span></div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 360px;
+      height: 100px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ({
+    position: '+'
+  });
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '100%'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='+'>
+              <img src='img/demo.jpg'>
+            </div>
+          </div>
+          <div class='block clearfix v'>
+
+            <div class='title'><span class='red'>指定</span>位置</div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 360px;
+      height: 100px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ({
+    position: '20px'
+  });
+  
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '20%'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='20px'>
+              <img src='img/demo.jpg'>
+            </div>
+          </div>
+        </div>
+
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+
+        <div class='panel'>
+          <div class='block clearfix h'>
+            <div class='title'>水平置<span class='red'>中</span></div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 100px;
+      height: 300px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ();
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '='
+  });
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '50%'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='='>
+              <img src='img/demo.jpg'>
+            </div>
+
+          </div>
+          <div class='block clearfix h'>
+
+            <div class='title'>水平置<span class='red'>左</span></div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 100px;
+      height: 300px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ({
+    position: '-'
+  });
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '0%'
+  });
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '0' // or '0px'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='-'>
+              <img src='img/demo.jpg'>
+            </div>
+          </div>
+          <div class='block clearfix h'>
+
+            <div class='title'>水平置<span class='red'>右</span></div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 100px;
+      height: 300px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ({
+    position: '+'
+  });
+
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '100%'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='+'>
+              <img src='img/demo.jpg'>
+            </div>
+          </div>
+          <div class='block clearfix h'>
+
+            <div class='title'><span class='red'>指定</span>位置</div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 100px;
+      height: 300px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ({
+    position: '30px'
+  });
+  
+  // or
+
+  $('.oa-imgLiquid').OAtab ({
+    position: '30%'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='30px'>
+              <img src='img/demo.jpg'>
+            </div>
+          </div>
+        </div>
+
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+        <div class='panel'>
+
+          <div class='block clearfix v'>
+            <div class='title'>範圍限制</div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 300px;
+      height: 100px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ({
+    overflow: true,
+    position: '-30px'
+  });
+</pre>
+            </div>
+            <div class='demo' data-position='-30px' data-overflow='true'>
+              <img src='img/demo.jpg'>
+            </div>
+          </div>
+
+
+          <div class='block clearfix h'>
+            <div class='title'>使用結構 <span class='red'>data-position</span>、<span class='red'>data-overflow</span></div>
+            <div class='code'>
+<pre class='html prettyprint' data-path='html'>
+  &lt;div class='oa-imgLiquid' data-position='-30px' data-overflow='true'&gt;
+    &lt;img sec='demo.jpg' /&gt;
+  &lt;/div&gt;
+</pre>
+<pre class='css prettyprint' data-path='css'>
+  &lt;style&gt;
+    .oa-imgLiquid {
+      position: relative;
+      width: 100px;
+      height: 300px;
+    }
+  &lt;/style&gt;
+</pre>
+<pre class='js prettyprint' data-path='javascript'>
+  $('.oa-imgLiquid').OAtab ();
+</pre>
+            </div>
+            <div class='demo' data-position='-30px' data-overflow='true'>
+              <img src='img/demo.jpg'>
+            </div>
+          </div>
+        </div>
+
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+        <div class='panel'>
+          <div class='about'>
+            <div class='info clearfix'>
+              <div class='key'>作者名稱</div>
+              <div class='value'>OA Wu</div>
+            </div>
+            <div class='info clearfix'>
+              <div class='key'>作品名稱</div>
+              <div class='value'>OAimgLiquid</div>
+            </div>
+            <div class='info clearfix'>
+              <div class='key'>最新版本</div>
+              <div class='value'>1.0.0</div>
+            </div>
+            <div class='info clearfix'>
+              <div class='key'>GitHub</div>
+              <div class='value'><a href='https://github.com/comdan66/OA-imgLiquid' target='_blank'>OA-imgLiquid</a></div>
+            </div>
+            <div class='info clearfix'>
+              <div class='key'>更新日期</div>
+              <div class='value'>2014/11/30</div>
+            </div>
+          </div>
+        </div>
       </div>
-
-     <!--  <div class='img'>
-        <img src='img/demo.jpg'>
-      </div>
-
-      <div class='img a'>
-        <img src='img/demo2.jpg'>
-      </div> -->
 
     </div>
   </body>

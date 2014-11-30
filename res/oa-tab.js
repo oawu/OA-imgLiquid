@@ -13,10 +13,11 @@
       var d4Opt = {
         titleSelector: '.title',
         panelSelector: '.panel',
+        defaultActive: 0,
       },
       init = function (opt) {
-        var $title = $(this).find (opt.titleSelector).addClass ('oa-tab-title').clone (true, true),
-            $panel = $(this).find (opt.panelSelector).addClass ('oa-tab-panel').clone (true, true);
+        var $title = $(this).children (opt.titleSelector).addClass ('oa-tab-title').clone (true, true),
+            $panel = $(this).children (opt.panelSelector).addClass ('oa-tab-panel').clone (true, true);
 
         $(this).addClass ('oa-tab').empty ();
 
@@ -34,7 +35,7 @@
             $panel.map (function (i) {
               $(this).css ({'left': (i - n) * (parseFloat ($rn.css ('width')) + parseFloat ($rn.css ('margin-left')) + parseFloat ($rn.css ('margin-right'))) + 'px'});
             })
-          }).eq (0).click ()
+          }).eq (opt.defaultActive).click ()
       }
 
       opt = $.extend({}, d4Opt, opt);

@@ -3,6 +3,10 @@
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
 $(function () {
-  $('.tab').OAtab ();
+  $('.prettyprint').addClass ('linenums');
+  prettyPrint ();
+
+  $('.tab').OAtab ({defaultActive: 4});
   // $('.img').OAimgLiquid ();
+  $('.demo').OAimgLiquid ();
 });
