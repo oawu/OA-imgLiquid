@@ -58,14 +58,14 @@
         return n;
       };
       
-      opt = $.extend({}, d4Opt, opt);
+      opt = $.extend (true, d4Opt, opt);
 
       return $(this).each (function () {
         if ($(this).data (opt.dataPositionName))
-          opt = $.extend({}, opt, {position: $(this).data (opt.dataPositionName)});
+          opt = $.extend ({}, opt, {position: $(this).data (opt.dataPositionName)});
         
         if ($(this).data (opt.dataOverflowName))
-          opt = $.extend({}, opt, {agreeOverflow: $(this).data (opt.dataOverflowName)});
+          opt = $.extend ({}, opt, {agreeOverflow: $(this).data (opt.dataOverflowName)});
 
         p = {w: parseFloat ($(this).css ('width')), h: parseFloat ($(this).css ('height'))}
         $img = $(this).children ('img');
