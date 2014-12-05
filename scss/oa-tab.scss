@@ -25,6 +25,16 @@ $arrowSize: 10px;
     .oa-tab-titles-container {
       display: inline-block;
 
+      &.clearfix {
+        *zoom: 1;
+
+        &:after {
+          display: table;
+          content: "";
+          line-height: 0;
+          clear: both;
+        }
+      }
       .oa-tab-title {
         position: relative;
         display: inline-block;
