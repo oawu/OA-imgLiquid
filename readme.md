@@ -424,10 +424,10 @@
 
 * E-mail - <comdan66@gmail.com>
 
-* 作品名稱 - OAimgLiquid
+* 作品名稱 - OA-imgLiquid
 
-* 最新版本 - 1.0.0
+* 最新版本 - 1.0.1
 
 * GitHub - [OA-imgLiquid](https://github.com/comdan66/OA-imgLiquid)
 
-* 更新日期 - 2014/11/30
+* 更新日期 - 2014/12/05
