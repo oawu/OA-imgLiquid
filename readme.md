@@ -10,7 +10,7 @@
 ## 簡介
 * 這是一個前端 jQuery extend function，主要架構於 [jQuery](http://jquery.com/)。  
 
-* Demo 範例頁面: [http://comdan66.github.io/OA-imgLiquid/](http://comdan66.github.io/OA-imgLiquid/)
+* Demo 範例頁面: [http://works.ioa.tw/OA-imgLiquid/](http://works.ioa.tw/OA-imgLiquid/)
 
 <br/>
 ## 目錄
